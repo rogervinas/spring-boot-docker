@@ -1,1 +1,1 @@
-rootProject.name = "springbootdocker"
+rootProject.name = "spring-boot-docker"
