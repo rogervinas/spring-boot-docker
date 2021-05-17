@@ -53,7 +53,7 @@ tasks.withType<Test> {
 }
 
 testSets {
-    "docker-test"()
+    "container-test"()
 }
 
-tasks.get("docker-test").dependsOn("bootBuildImage")
+tasks.get("container-test").dependsOn("bootBuildImage")
