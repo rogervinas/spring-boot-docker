@@ -5,6 +5,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "2.4.5"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
+    id("org.unbroken-dome.test-sets") version "4.0.0"
     kotlin("jvm") version "1.4.32"
     kotlin("plugin.spring") version "1.4.32"
 }
@@ -12,6 +13,8 @@ plugins {
 group = "com.rogervinas"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
+
+val testContainersVersion by extra("1.15.3")
 
 repositories {
     mavenCentral()
@@ -26,6 +29,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
+
+    testImplementation("org.testcontainers:testcontainers:$testContainersVersion")
+    testImplementation("org.testcontainers:junit-jupiter:$testContainersVersion")
 }
 
 tasks.withType<KotlinCompile> {
@@ -45,3 +51,9 @@ tasks.withType<Test> {
         showStackTraces = true
     }
 }
+
+testSets {
+    "docker-test"()
+}
+
+tasks.get("docker-test").dependsOn("bootBuildImage")
