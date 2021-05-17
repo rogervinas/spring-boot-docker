@@ -15,7 +15,7 @@ class ApplicationContainerTests {
     companion object {
         private const val appPort = 8080
         @Container
-        private val app = KGenericContainer("spring-boot-docker:0.0.1-SNAPSHOT")
+        private val app = KGenericContainer(System.getProperty("docker.image"))
                 .withExposedPorts(appPort)
     }
 

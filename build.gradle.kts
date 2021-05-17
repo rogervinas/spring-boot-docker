@@ -50,6 +50,7 @@ tasks.withType<Test> {
         showCauses = true
         showStackTraces = true
     }
+    systemProperty("docker.image", "${project.name}:${project.version}")
 }
 
 testSets {
