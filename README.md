@@ -2,13 +2,13 @@
 
 # Spring Boot with Docker
 
-In this sample we will create a Spring Boot Application with a simple /hello endpoint and then distribute it as a 🐳 docker image
+In this sample we will create a **🍀 Spring Boot Application** with a simple /hello endpoint and then distribute it as a **🐳 Docker image**
 
-And of course we want to ensure the docker image works, so we will test the generated docker image using Testcontainers 🤩
+And of course we want to ensure the Docker image works, so we will test it using [Testcontainers](https://www.testcontainers.org/) 🤩
 
 Ready? Let's go!
 
-1. First we go to [Spring Initialzr](https://start.spring.io/) and create an empty Spring Boot project with Webflux and Kotlin
+1. We start at [Spring Initialzr](https://start.spring.io/#!type=gradle-project&language=kotlin&platformVersion=2.6.2&packaging=jar&jvmVersion=11&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=webflux) and create an empty **Spring Boot** project with **Webflux** and **Kotlin**
 
 2. Then we add this simple test
 
@@ -56,7 +56,7 @@ And luckily for us, it is as easy as use the task `bootBuildImage` of the [Sprin
 ./gradlew bootBuildImage
 ```
 
-So far so good!
+So far so good! 😁
 
 Now we have to test the generated docker image ...
 
@@ -110,4 +110,4 @@ tasks.withType<Test> {
 
 As `${project.name}:${project.version}` is the default value used by `bootBuildImage` task
 
-And that is all! Happy coding!
+And that is all! Happy coding! 💙
