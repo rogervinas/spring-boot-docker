@@ -6,6 +6,8 @@ In this sample we will create a **🍀 Spring Boot Application** with a simple /
 
 And of course we want to ensure the Docker image works, so we will test it using [Testcontainers](https://www.testcontainers.org/) 🤩
 
+![Diagram](doc/diagram.png)
+
 Ready? Let's go!
 
 ### 1. We start at [Spring Initialzr](https://start.spring.io/#!type=gradle-project&language=kotlin&platformVersion=2.6.2&packaging=jar&jvmVersion=11&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=webflux) and create an empty **Spring Boot** project with **Webflux** and **Kotlin**
