@@ -113,3 +113,39 @@ tasks.withType<Test> {
 As `${project.name}:${project.version}` is the default value used by `bootBuildImage` task
 
 And that is all! Happy coding! 💙
+
+## Test
+
+Test the application without assembling it:
+```
+./gradlew test
+```
+
+Build the application as a container and test it:
+```
+./gradlew container-test
+```
+
+## Run
+
+Run the application without assembling it:
+```shell
+./gradlew bootRun
+```
+
+Build the application as a fatjar and run it with java:
+```shell
+./gradlew bootJar
+java -jar ./build/libs/spring-boot-docker-0.0.1-SNAPSHOT.jar
+```
+
+Build the application as a container and run it with docker:
+```shell
+./gradlew bootBuildImage
+docker run -p 8080:8080 --rm spring-boot-docker:0.0.1-SNAPSHOT
+```
+
+In either case, call the /hello endpoint:
+```shell
+curl -v -w'\n' http://localhost:8080/hello
+```
