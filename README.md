@@ -10,6 +10,12 @@ And of course we want to ensure the Docker image works, so we will test it using
 
 Ready? Let's go!
 
+- [Develop](#develop)
+- [Test this demo](#test-this-demo)
+- [Run this demo](#run-this-demo)
+
+## Develop
+
 ### 1. We start at [Spring Initialzr](https://start.spring.io/#!type=gradle-project&language=kotlin&platformVersion=2.6.2&packaging=jar&jvmVersion=11&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=webflux) and create an empty **Spring Boot** project with **Webflux** and **Kotlin**
 
 ### 2. Then we add this simple test
@@ -114,7 +120,7 @@ As `${project.name}:${project.version}` is the default value used by `bootBuildI
 
 And that is all! Happy coding! 💙
 
-## Test
+## Test this demo
 
 Test the application without assembling it:
 ```
@@ -126,7 +132,7 @@ Build the application as a container and test it:
 ./gradlew container-test
 ```
 
-## Run
+## Run this demo
 
 Run the application without assembling it:
 ```shell
