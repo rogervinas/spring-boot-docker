@@ -24,13 +24,13 @@ class ApplicationContainerTests {
 
   @Test
   fun `should say hello`() {
-    WebClient.builder()
+    val responseBody = WebClient.builder()
       .baseUrl("http://localhost:${app.getMappedPort(appPort)}").build()
       .get().uri("/hello")
       .exchangeToMono { response ->
         assertThat(response.statusCode()).isEqualTo(HttpStatus.OK)
-        assertThat(response.bodyToMono(String::class.java)).isEqualTo("hello!")
-        response.releaseBody()
-      }
+        response.bodyToMono(String::class.java)
+      }.block()
+    assertThat(responseBody).isEqualTo("hello!")
   }
 }
