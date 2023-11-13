@@ -17,6 +17,9 @@ Ready? Let's go!
 - [Test this demo](#test-this-demo)
 - [Run this demo](#run-this-demo)
 
+You can browse older versions:
+- [Spring Boot 2.x](https://github.com/rogervinas/spring-boot-docker/tree/spring-boot-2.x)
+
 ## Develop
 
 ### 1. We start at [Spring Initialzr](https://start.spring.io/#!type=gradle-project-kotlin&language=kotlin&packaging=jar&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=webflux) and create an empty **Spring Boot** project with **Webflux** and **Kotlin**
