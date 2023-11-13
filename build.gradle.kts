@@ -55,6 +55,10 @@ tasks.withType<Test> {
   systemProperty("docker.image", "${project.name}:${project.version}")
 }
 
+tasks.bootBuildImage {
+  builder.set("paketobuildpacks/builder-jammy-base:latest")
+}
+
 testSets {
   "container-test"()
 }
