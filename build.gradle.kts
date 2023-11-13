@@ -14,7 +14,7 @@ plugins {
 
 group = "com.rogervinas"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_21
 
 val testContainersVersion = "1.16.2"
 
@@ -39,7 +39,7 @@ dependencies {
 tasks.withType<KotlinCompile> {
   kotlinOptions {
     freeCompilerArgs = listOf("-Xjsr305=strict")
-    jvmTarget = "17"
+    jvmTarget = "21"
   }
 }
 
@@ -53,6 +53,10 @@ tasks.withType<Test> {
     showStackTraces = true
   }
   systemProperty("docker.image", "${project.name}:${project.version}")
+}
+
+tasks.bootBuildImage {
+  builder.set("paketobuildpacks/builder-jammy-base:latest")
 }
 
 testSets {

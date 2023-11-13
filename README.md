@@ -1,5 +1,5 @@
 [![CI](https://github.com/rogervinas/spring-boot-docker/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/rogervinas/spring-boot-docker/actions/workflows/gradle.yml)
-![Java](https://img.shields.io/badge/Java-17-blue?labelColor=black)
+![Java](https://img.shields.io/badge/Java-21-blue?labelColor=black)
 ![Kotlin](https://img.shields.io/badge/Kotlin-1.9.20-blue?labelColor=black)
 ![SpringBoot](https://img.shields.io/badge/SpringBoot-3.1.15-blue?labelColor=black)
 
@@ -52,9 +52,8 @@ class ApplicationTests {
 ```kotlin
 @RestController
 class HelloController {
-
-    @GetMapping("/hello")
-    fun hello() = "hello!"
+  @GetMapping("/hello")
+  fun hello() = "hello!"
 }
 ```
 
@@ -82,7 +81,7 @@ plugins {
 }
 
 testSets {
-    "container-test"()
+  "container-test"()
 }
 
 tasks["container-test"].dependsOn("bootBuildImage")
@@ -99,11 +98,11 @@ class ApplicationContainerTests {
 
   companion object {
 
-    private const val appPort = 8080
+    private const val APP_PORT = 8080
 
     @Container
     private val app = GenericContainer(System.getProperty("docker.image"))
-      .withExposedPorts(appPort)
+      .withExposedPorts(APP_PORT)
   }
 
   @Test
@@ -115,10 +114,10 @@ class ApplicationContainerTests {
 
 ### 7. Last thing we need to do is set the value of the system property `docker.image` before running any test:
 
-```
+```kotlin
 tasks.withType<Test> {
-    useJUnitPlatform()
-    systemProperty("docker.image", "${project.name}:${project.version}")
+  useJUnitPlatform()
+  systemProperty("docker.image", "${project.name}:${project.version}")
 }
 ```
 
@@ -159,5 +158,5 @@ docker run -p 8080:8080 --rm spring-boot-docker:0.0.1-SNAPSHOT
 
 In either case, call the /hello endpoint:
 ```shell
-curl -v -w'\n' http://localhost:8080/hello
+curl -i http://localhost:8080/hello
 ```
