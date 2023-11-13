@@ -102,7 +102,7 @@ class ApplicationContainerTests {
     private const val appPort = 8080
 
     @Container
-    private val app = KGenericContainer(System.getProperty("docker.image"))
+    private val app = GenericContainer(System.getProperty("docker.image"))
       .withExposedPorts(appPort)
   }
 
