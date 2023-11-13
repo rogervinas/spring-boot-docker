@@ -1,4 +1,7 @@
 [![CI](https://github.com/rogervinas/spring-boot-docker/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/rogervinas/spring-boot-docker/actions/workflows/gradle.yml)
+![Java](https://img.shields.io/badge/Java-11-blue?labelColor=black)
+![Kotlin](https://img.shields.io/badge/Kotlin-1.6.10-blue?labelColor=black)
+![SpringBoot](https://img.shields.io/badge/SpringBoot-2.6.2-blue?labelColor=black)
 
 # Spring Boot with Docker
 
@@ -16,7 +19,7 @@ Ready? Let's go!
 
 ## Develop
 
-### 1. We start at [Spring Initialzr](https://start.spring.io/#!type=gradle-project&language=kotlin&platformVersion=2.6.2&packaging=jar&jvmVersion=11&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=webflux) and create an empty **Spring Boot** project with **Webflux** and **Kotlin**
+### 1. We start at [Spring Initialzr](https://start.spring.io/#!type=gradle-project-kotlin&language=kotlin&packaging=jar&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=webflux) and create an empty **Spring Boot** project with **Webflux** and **Kotlin**
 
 ### 2. Then we add this simple test
 
