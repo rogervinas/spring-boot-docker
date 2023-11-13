@@ -77,7 +77,7 @@ Now we have to test the generated docker image ...
 
 ```kotlin
 plugins {
-  id("org.unbroken-dome.test-sets") version "4.0.0"
+  id("org.unbroken-dome.test-sets") version "x.x.x"
 }
 
 testSets {
