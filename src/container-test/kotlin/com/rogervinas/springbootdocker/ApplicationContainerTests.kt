@@ -8,8 +8,6 @@ import org.testcontainers.containers.GenericContainer
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
 
-class KGenericContainer(imageName: String) : GenericContainer<KGenericContainer>(imageName)
-
 @Testcontainers
 class ApplicationContainerTests {
 
@@ -18,7 +16,7 @@ class ApplicationContainerTests {
     private const val APP_PORT = 8080
 
     @Container
-    private val app = KGenericContainer(System.getProperty("docker.image"))
+    private val app = GenericContainer(System.getProperty("docker.image"))
       .withExposedPorts(APP_PORT)
   }
 

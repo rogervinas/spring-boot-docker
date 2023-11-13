@@ -5,16 +5,16 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent.SKIPPED
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-  id("org.springframework.boot") version "2.7.17"
-  id("io.spring.dependency-management") version "1.0.15.RELEASE"
-  kotlin("jvm") version "1.6.21"
-  kotlin("plugin.spring") version "1.6.21"
-  id("org.unbroken-dome.test-sets") version "4.0.0"
+  id("org.springframework.boot") version "3.1.5"
+  id("io.spring.dependency-management") version "1.1.3"
+  kotlin("jvm") version "1.9.20"
+  kotlin("plugin.spring") version "1.9.20"
+  id("org.unbroken-dome.test-sets") version "4.1.0"
 }
 
 group = "com.rogervinas"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_11
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 val testContainersVersion = "1.16.2"
 
@@ -39,7 +39,7 @@ dependencies {
 tasks.withType<KotlinCompile> {
   kotlinOptions {
     freeCompilerArgs = listOf("-Xjsr305=strict")
-    jvmTarget = "11"
+    jvmTarget = "17"
   }
 }
 
