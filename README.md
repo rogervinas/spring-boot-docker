@@ -49,9 +49,8 @@ class ApplicationTests {
 ```kotlin
 @RestController
 class HelloController {
-
-    @GetMapping("/hello")
-    fun hello() = "hello!"
+  @GetMapping("/hello")
+  fun hello() = "hello!"
 }
 ```
 
@@ -79,10 +78,10 @@ plugins {
 }
 
 testSets {
-    "container-test"()
+  "container-test"()
 }
 
-tasks.get("container-test").dependsOn("bootBuildImage")
+tasks["container-test"].dependsOn("bootBuildImage")
 
 ```
 
@@ -112,10 +111,10 @@ class ApplicationContainerTests {
 
 ### 7. Last thing we need to do is set the value of the system property `docker.image` before running any test:
 
-```
+```kotlin
 tasks.withType<Test> {
-    useJUnitPlatform()
-    systemProperty("docker.image", "${project.name}:${project.version}")
+  useJUnitPlatform()
+  systemProperty("docker.image", "${project.name}:${project.version}")
 }
 ```
 
@@ -156,5 +155,5 @@ docker run -p 8080:8080 --rm spring-boot-docker:0.0.1-SNAPSHOT
 
 In either case, call the /hello endpoint:
 ```shell
-curl -v -w'\n' http://localhost:8080/hello
+curl -i http://localhost:8080/hello
 ```
