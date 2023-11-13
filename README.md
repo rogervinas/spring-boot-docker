@@ -96,11 +96,11 @@ class ApplicationContainerTests {
 
   companion object {
 
-    private const val appPort = 8080
+    private const val APP_PORT = 8080
 
     @Container
     private val app = KGenericContainer(System.getProperty("docker.image"))
-      .withExposedPorts(appPort)
+      .withExposedPorts(APP_PORT)
   }
 
   @Test
