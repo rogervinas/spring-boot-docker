@@ -9,7 +9,7 @@ plugins {
   id("io.spring.dependency-management") version "1.0.15.RELEASE"
   kotlin("jvm") version "1.6.21"
   kotlin("plugin.spring") version "1.6.21"
-  id("org.unbroken-dome.test-sets") version "4.0.0"
+  id("org.unbroken-dome.test-sets") version "4.1.0"
 }
 
 group = "com.rogervinas"
