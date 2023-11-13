@@ -1,7 +1,7 @@
 [![CI](https://github.com/rogervinas/spring-boot-docker/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/rogervinas/spring-boot-docker/actions/workflows/gradle.yml)
 ![Java](https://img.shields.io/badge/Java-21-blue?labelColor=black)
-![Kotlin](https://img.shields.io/badge/Kotlin-1.6.21-blue?labelColor=black)
-![SpringBoot](https://img.shields.io/badge/SpringBoot-2.7.17-blue?labelColor=black)
+![Kotlin](https://img.shields.io/badge/Kotlin-1.9.20-blue?labelColor=black)
+![SpringBoot](https://img.shields.io/badge/SpringBoot-3.1.15-blue?labelColor=black)
 
 # Spring Boot with Docker
 
@@ -16,6 +16,9 @@ Ready? Let's go!
 - [Develop](#develop)
 - [Test this demo](#test-this-demo)
 - [Run this demo](#run-this-demo)
+
+You can browse older versions:
+- [Spring Boot 2.x](https://github.com/rogervinas/spring-boot-docker/tree/spring-boot-2.x)
 
 ## Develop
 
@@ -98,7 +101,7 @@ class ApplicationContainerTests {
     private const val APP_PORT = 8080
 
     @Container
-    private val app = KGenericContainer(System.getProperty("docker.image"))
+    private val app = GenericContainer(System.getProperty("docker.image"))
       .withExposedPorts(APP_PORT)
   }
 
