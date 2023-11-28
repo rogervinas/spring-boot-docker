@@ -5,7 +5,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent.SKIPPED
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-  id("org.springframework.boot") version "3.1.5"
+  id("org.springframework.boot") version "3.2.0"
   id("io.spring.dependency-management") version "1.1.4"
   kotlin("jvm") version "1.9.21"
   kotlin("plugin.spring") version "1.9.20"
@@ -16,7 +16,7 @@ group = "com.rogervinas"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_21
 
-val testContainersVersion = "1.19.2"
+val testContainersVersion = "1.19.3"
 
 repositories {
   mavenCentral()
