@@ -1,6 +1,6 @@
 [![CI](https://github.com/rogervinas/spring-boot-docker/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/rogervinas/spring-boot-docker/actions/workflows/gradle.yml)
 ![Java](https://img.shields.io/badge/Java-21-blue?labelColor=black)
-![Kotlin](https://img.shields.io/badge/Kotlin-1.9.21-blue?labelColor=black)
+![Kotlin](https://img.shields.io/badge/Kotlin-1.9.22-blue?labelColor=black)
 ![SpringBoot](https://img.shields.io/badge/SpringBoot-3.2.0-blue?labelColor=black)
 
 # Spring Boot with Docker
