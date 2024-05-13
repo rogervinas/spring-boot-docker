@@ -16,7 +16,7 @@ group = "com.rogervinas"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_21
 
-val testContainersVersion = "1.19.7"
+val testContainersVersion = "1.19.8"
 
 repositories {
   mavenCentral()
