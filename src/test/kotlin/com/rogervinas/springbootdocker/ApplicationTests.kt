@@ -10,19 +10,19 @@ import org.springframework.web.reactive.function.client.WebClient
 
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 class ApplicationTests {
-
   @LocalServerPort
   private var port: Int = 0
 
   @Test
   fun `should say hello`() {
-    val responseBody = WebClient.builder()
-      .baseUrl("http://localhost:$port").build()
-      .get().uri("/hello")
-      .exchangeToMono { response ->
-        assertThat(response.statusCode()).isEqualTo(HttpStatus.OK)
-        response.bodyToMono(String::class.java)
-      }.block()
+    val responseBody =
+      WebClient.builder()
+        .baseUrl("http://localhost:$port").build()
+        .get().uri("/hello")
+        .exchangeToMono { response ->
+          assertThat(response.statusCode()).isEqualTo(HttpStatus.OK)
+          response.bodyToMono(String::class.java)
+        }.block()
     assertThat(responseBody).isEqualTo("hello!")
   }
 }
