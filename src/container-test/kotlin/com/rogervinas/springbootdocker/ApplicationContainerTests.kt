@@ -10,25 +10,25 @@ import org.testcontainers.junit.jupiter.Testcontainers
 
 @Testcontainers
 class ApplicationContainerTests {
-
   companion object {
-
     private const val APP_PORT = 8080
 
     @Container
-    private val app = GenericContainer(System.getProperty("docker.image"))
-      .withExposedPorts(APP_PORT)
+    private val app =
+      GenericContainer(System.getProperty("docker.image"))
+        .withExposedPorts(APP_PORT)
   }
 
   @Test
   fun `should say hello`() {
-    val responseBody = WebClient.builder()
-      .baseUrl("http://localhost:${app.getMappedPort(APP_PORT)}").build()
-      .get().uri("/hello")
-      .exchangeToMono { response ->
-        assertThat(response.statusCode()).isEqualTo(HttpStatus.OK)
-        response.bodyToMono(String::class.java)
-      }.block()
+    val responseBody =
+      WebClient.builder()
+        .baseUrl("http://localhost:${app.getMappedPort(APP_PORT)}").build()
+        .get().uri("/hello")
+        .exchangeToMono { response ->
+          assertThat(response.statusCode()).isEqualTo(HttpStatus.OK)
+          response.bodyToMono(String::class.java)
+        }.block()
     assertThat(responseBody).isEqualTo("hello!")
   }
 }
