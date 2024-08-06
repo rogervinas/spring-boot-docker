@@ -26,6 +26,4 @@ jobs:
       run: ./gradlew build
 
     - name: Container test
-      uses: gradle/actions/setup-gradle@v3
-      with:
-        arguments: container-test
+      run: ./gradlew container-test
