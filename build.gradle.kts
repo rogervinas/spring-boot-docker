@@ -14,7 +14,7 @@ plugins {
 group = "com.rogervinas"
 version = "0.0.1-SNAPSHOT"
 
-val testContainersVersion = "1.20.5"
+val testContainersVersion = "1.20.6"
 
 repositories {
   mavenCentral()
